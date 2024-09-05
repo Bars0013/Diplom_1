@@ -33,5 +33,4 @@ class TestIngredient:
     @pytest.mark.parametrize("ingredient_type", [INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FILLING])
     def test_get_type_success(self, ingredient_type):
         ingredient = Ingredient(ingredient_type, Data.INGREDIENT_NAME, Data.INGREDIENT_PRICE)
-        expected_type = 'SAUCE' if ingredient_type == INGREDIENT_TYPE_SAUCE else 'FILLING'
-        assert ingredient.get_type() == expected_type
+        assert ingredient.get_type() == ingredient_type
